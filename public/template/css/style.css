@@ -2074,3 +2074,13 @@ a>.on-page>.active {
 	border-radius: 0px;
 	background-color: white;
 }
+
+/*-----------------------------------------------*/
+/* Profile Forum								 */
+/* By: Stevanno									 */	
+/*-----------------------------------------------*/
+
+.user-info-left {
+  font-weight: bolder;
+  font-size: 1.1em;
+}

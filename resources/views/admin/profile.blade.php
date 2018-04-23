@@ -3,6 +3,7 @@
 @section('title', $userdata[3]->name . ' | Profile')
 
 @section('content')
+
 @if(Auth::user() != null && Auth::user()->IsAdmin == 1)
 <div class="container" style="margin-top: 3%">
     <div class="row edit-profile">
@@ -10,7 +11,6 @@
             <img alt="User Pic" src="/storage/profile_image/{{$userdata[3]->profile_image}}" class="img-circle img-responsive"
             id="user-ava">
             <h3 class="panel-title user-main-name">{{$userdata[3]->name}}</h3>
-            <h3 class="panel-title nim">{{$userdata[3]->nim}}</h3>
         </div>
         <div class="col-8">
             <div class="profile-content">
@@ -20,29 +20,29 @@
                     <table class="table table-user-information">
                         <tbody>
                             <tr>
-                                <td>Name</td>
+                                <td class="user-info-left">Name</td>
                                 <td>{{$userdata[3]->name}}</td>
                             </tr>
                             <tr>
-                                <td>Phone Number</td>
+                                <td class="user-info-left">Phone Number</td>
                                 <td>{{$userdata[3]->phone_number}}                            
                             </tr>
                             <tr>
-                                <td>Company</td>
+                                <td class="user-info-left">Company</td>
                                 <td>{{$userdata[3]->company}}</td>
                             </tr>
                             <tr>
-                                <td>Interest</td>
+                                <td class="user-info-left">Interest</td>
                                 <td>{{$userdata[3]->interest}}</td>
                             </tr>
                             <tr>
-                                <td>Address</td>
+                                <td class="user-info-left">Address</td>
                                 <td>{{$userdata[3]->address}}</td>
                             </tr>
                             @if(Auth::guard('member')->user() != null && Auth::guard('member')->user()->id == $userdata[3]->id)
                                 @if(Auth::guard('member')->user()->email != null)
                                     <tr>
-                                        <td>
+                                        <td class="user-info-left">
                                             Google Account
                                         </td>
                                         <td>
@@ -55,7 +55,7 @@
                                 @endif
                                 @if(Auth::guard('member')->user()->facebook_email != null)
                                     <tr>
-                                        <td>
+                                        <td class="user-info-left">
                                             Facebook Account
                                         </td>
                                         <td>
@@ -67,7 +67,7 @@
                                     </tr>
                                 @else
                                     <tr>
-                                        <td>
+                                        <td class="user-info-left">
                                             Facebook Account
                                         </td>
                                         <td>
@@ -79,7 +79,7 @@
                                 @endif
                                 @if(Auth::guard('member')->user()->linkedin_email != null)
                                     <tr>
-                                        <td>
+                                        <td class="user-info-left">
                                             Linkedin Account
                                         </td>
                                         <td>
@@ -91,7 +91,7 @@
                                     </tr>
                                 @else
                                     <tr>
-                                        <td>
+                                        <td class="user-info-left">
                                             Linkedin Account
                                         </td>
                                         <td>
@@ -130,6 +130,7 @@
             <img alt="User Pic" src="/storage/profile_image/{{$userdata[3]->profile_image}}" class="img-circle img-responsive"
             id="user-ava">
             <h3 class="panel-title user-main-name">{{$userdata[3]->name}}</h3>
+            <h3 class="panel-title nim">{{$userdata[3]->nim}}</h3>
         </div>        
         <div class="col-5 col-md-offset-3-5 col-xs-offset-3-5 edit-prof-pic" style="margin-right: 29.166666667%">
             <div class="row user-services">
@@ -186,29 +187,29 @@
                         <table class="table table-user-information">
                             <tbody>
                                 <tr>
-                                    <td>Name</td>
+                                    <td class="user-info-left">Name</td>
                                     <td>{{$userdata[3]->name}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Phone Number</td>
-                                    <td>{{$userdata[3]->phone_number}}                            
+                                    <td class="user-info-left">Phone Number</td>
+                                    <td>{{$userdata[3]->phone_number}}</td>                          
                                 </tr>
                                 <tr>
-                                    <td>Company</td>
+                                    <td class="user-info-left">Company</td>
                                     <td>{{$userdata[3]->company}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Interest</td>
+                                    <td class="user-info-left">Interest</td>
                                     <td>{{$userdata[3]->interest}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Address</td>
+                                    <td class="user-info-left">Address</td>
                                     <td>{{$userdata[3]->address}}</td>
                                 </tr>
                                 @if(Auth::guard('member')->user() != null && Auth::guard('member')->user()->id == $userdata[3]->id)
                                     @if(Auth::guard('member')->user()->email != null)
                                         <tr>
-                                            <td>
+                                            <td class="user-info-left">
                                                 Google Account
                                             </td>
                                             <td>
@@ -221,7 +222,7 @@
                                     @endif
                                     @if(Auth::guard('member')->user()->facebook_email != null)
                                         <tr>
-                                            <td>
+                                            <td class="user-info-left">
                                                 Facebook Account
                                             </td>
                                             <td>
@@ -233,7 +234,7 @@
                                         </tr>
                                     @else
                                         <tr>
-                                            <td>
+                                            <td class="user-info-left">
                                                 Facebook Account
                                             </td>
                                             <td>
@@ -245,7 +246,7 @@
                                     @endif
                                     @if(Auth::guard('member')->user()->linkedin_email != null)
                                         <tr>
-                                            <td>
+                                            <td class="user-info-left">
                                                 Linkedin Account
                                             </td>
                                             <td>
@@ -257,7 +258,7 @@
                                         </tr>
                                     @else
                                         <tr>
-                                            <td>
+                                            <td class="user-info-left">
                                                 Linkedin Account
                                             </td>
                                             <td>
@@ -272,6 +273,7 @@
                         </table>
                     </div>
                 </div>
+            </div>
         </div>
     </section>
 </div>
