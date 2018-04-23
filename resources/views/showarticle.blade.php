@@ -40,7 +40,7 @@
         @endif
         <a href="/posts" class="btn btn-info pull-down">&#8592; Back</a>
         </div>
-      </div> <!-- END OF WELL -->
+      </div> <!--END OF WELL-->
     <div class="col-2"></div>
   </div>
 </div>
