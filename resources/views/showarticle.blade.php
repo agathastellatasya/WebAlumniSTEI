@@ -23,7 +23,7 @@
                 Post
             </h5>
             <hr>
-            <div >{!!$post->body!!}</div>
+            <div style="word-wrap: break-word;">{!!$post->body!!}</div>
             <!-- FOOTER -->
             <div class="footer-article">
             <hr>

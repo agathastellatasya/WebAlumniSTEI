@@ -7,8 +7,8 @@
             <div class="col-2"></div>
                 <div class="well question-container col-8" style="margin-top: 40px">
                     <div class="qna-content" style="margin-left: 20px">
-                        <h1 >{{$question->topic}}</h1>
-                        <div class="body-article" style="font-size:1.5em;">{{$question->body}}</div>
+                        <h1 style="word-wrap: break-word;">{{$question->topic}}</h1>
+                        <div class="body-article" style="font-size:1.5em; word-wrap: break-word;">{{$question->body}}</div>
                         <div class="footer-article"><hr>
                             <small>Written on {{$question->created_at}}</small><br>
                             <small>Last Editted on {{$question->updated_at}}</small><br>
@@ -78,7 +78,7 @@
                             </div>
 
                             <div class="col-12">
-                                <p>{{$answer->body}}</p>
+                                <p style="word-wrap: break-word;">{{$answer->body}}</p>
                                 <a href="/answers/{{$answer->id}}">
                                     <small>
                                         Written on {{$answer->created_at}} by <a href="/members/{{$answer->member->id}}">{{$answer->member->name}}</a> <span>@if($answer->is_admin == 1)<span>as <span style="color:blue;">admin</span></span>@endif</span>
