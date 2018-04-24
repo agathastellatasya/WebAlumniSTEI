@@ -70,7 +70,7 @@
                     <div class="row">
                         <div class="col-8 post-card">
                             <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
-                            <i>Written on {{$post->created_at}} by {{$post->user->name}}</i>
+                            <i>Written on {{$post->created_at}} by Admin </i>
                         </div>
                         <div class="col-4 img-card">
                             <img style="width:100%" src="/storage/cover_images/{{$post->cover_image}}">
