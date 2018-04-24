@@ -712,7 +712,7 @@ li {
     #main-slide .slider-content h1{
 		font-size: 28px;
 		line-height: normal;
-		margin-bottom: 0;
+		margin-bottom: 3%;
 	}
 	#main-slide .slider-content p{
 		font-size: 14px;
@@ -724,15 +724,19 @@ li {
 		font-size: 12px;
 	}
 	#main-slide .carousel-indicators{
-		display: none;
+		display: block;
 	}
     
     #main-slide .item .slider-content{
-		display: none;
+		display: block;
 	}
     
     #main-slide .item {
-        height: 400px;
+        height: 450px;
+    }
+
+    #main-slide .item img {
+        height: 450px;
     }
     
 }
