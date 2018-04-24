@@ -206,3 +206,37 @@ div.overlay {
     border: none;
     color: #9cc5fc;
 }
+
+.footer-right-position {
+    text-align: right;
+}
+
+@media (max-width : 479px) {
+    .footer-right-position {
+        margin: 1% 0 1% 0;
+        text-align: center;
+    }
+}
+
+@media (max-width : 767px) {
+    .footer-right-position {
+        margin-top: 1%;
+        text-align: center;
+    }
+}
+
+.footer-left-position {
+    text-align: left;
+}
+
+@media (max-width : 479px) {
+    .footer-left-position {
+        text-align: center;
+    }
+}
+
+@media (max-width : 767px) {
+    .footer-left-position {
+        text-align: center;
+    }
+}

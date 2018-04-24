@@ -412,29 +412,6 @@
                 </div>
             </div>
         </div>
-        <footer class="style-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-xs-12">
-                        <span class="copyright">Copyright &copy; 2018 <a href="https://themefisher.com/">ThemeFisher</a></span>
-                    </div>
-                    <div class="col-md-4 col-xs-12">
-                        <div class="footer-social text-center">
-                            <ul>
-                                {{-- <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li> --}}
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-xs-12" style="text-align: right">
-                        <span class="copyright">Developed by <strong>STEI-ITB</strong> © 2018</span>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </section>
     <script>
     // When the user clicks on div, open the popup
