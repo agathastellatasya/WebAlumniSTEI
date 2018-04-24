@@ -82,7 +82,7 @@
                                     @if ($question->is_anon == 1)
                                         by Anonymous
                                     @else
-                                        by {{$question->member->name}}
+                                        by <a href="/members/{{$question->member->id}}">{{$question->member->name}}</a>
                                     @endif
                                 </i>
                             </small>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div id="answers-{{$question->id}}" class="row">
-                        @foreach ($question->answers->sortByDesc('rating')->sortByDesc('is_pinned') as $answer)
+                        @foreach ($question->answers->sortByDesc('rating')->sortByDesc('is_pinned')->take(3) as $answer)
                             <div class="col-12 post-card">
                                 <hr>
                                     <p>{{$answer->body}}</p>
