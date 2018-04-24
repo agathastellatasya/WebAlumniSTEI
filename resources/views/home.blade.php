@@ -25,7 +25,7 @@
             <!-- Carousel inner -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img class="img-responsive" src="{{ asset('template/images/header-bg-1.jpg') }}" alt="slider">
+                    <img class="img-responsive" src="{{ asset('template/images/banner.jpg') }}" alt="slider">
                     <div class="slider-content">
                         <div class="col-md-12 text-center">
                             <h1 class="animated3">
@@ -45,7 +45,7 @@
                     @foreach ($homedata[0] as $post)
                         @if ($i < 1)
                             <div class="item overlay">
-                                <img class="img-responsive-article" src="/storage/cover_images/{{$post->cover_image}}" alt="slider">
+                                <img class="img-responsive-article" src="{{ asset('template/images/article.jpg') }}" alt="slider">
                                 <div class="slider-content">
                                     <div class="col-md-12 text-center">
                                         <h1 class="animated1">
@@ -65,8 +65,8 @@
                     @endforeach
                 @endif
                 
-                <div class="item">
-                    <img class="img-responsive" src="{{ asset('template/images/view-more-article.jpg') }}" alt="slider">
+                <div class="item overlay">
+                    <img class="img-responsive-article" src="{{ asset('template/images/view-more-article.jpg') }}" alt="slider">
                     <div class="slider-content">
                         <div class="col-md-12 text-center">
                             <h1 class="animated2">
@@ -85,7 +85,7 @@
                         @foreach ($homedata[2] as $question)
                             @if ($i < 1)
                                 <div class="item overlay">
-                                    <img class="img-responsive" src="{{ asset('template/images/question.jpg') }}" alt="slider">
+                                    <img class="img-responsive-article" src="{{ asset('template/images/question.jpg') }}" alt="slider">
                                     <div class="slider-content">
                                         <div class="col-md-12 text-center">
                                             <h1 class="animated1">
@@ -107,8 +107,8 @@
                 @endif
 
                 @if ((Auth::user() != null) || (Auth::guard('member')->user() != null))
-                <div class="item">
-                    <img class="img-responsive" src="{{ asset('template/images/view-more-questions.jpg') }}" alt="slider">
+                <div class="item overlay">
+                    <img class="img-responsive-article" src="{{ asset('template/images/view-more-questions.jpg') }}" alt="slider">
                     <div class="slider-content">
                         <div class="col-md-12 text-center">
                             <h1 class="animated2">

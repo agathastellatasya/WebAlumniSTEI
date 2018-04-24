@@ -28,11 +28,22 @@
                     <a href="#page-top"></a>
                 </li>   
                 <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
                     @if (Request::is('/'))
-                        {{-- nothing --}}
-                    @else
-                        <a href="/">Home</a>
-                    @endif
+                        <a class="page-scroll" href="#service">Services</a>
+                    @endif       
+                </li>
+                <li>
+                    @if (Request::is('/'))
+                        <a class="page-scroll" href="#team">New member</a>
+                    @endif                       
+                </li>
+                <li>
+                    @if (Request::is('/'))
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    @endif        
                 </li>
 
                 {{-- Article --}}
@@ -69,21 +80,6 @@
                         <a class="page-scroll" href="/about">About</a>
                     </li>
                 @endif
-                <li>
-                    @if (Request::is('/'))
-                        <a class="page-scroll" href="#service">Services</a>
-                    @endif       
-                </li>
-                <li>
-                    @if (Request::is('/'))
-                        <a class="page-scroll" href="#team">New member</a>
-                    @endif                       
-                </li>
-                <li>
-                    @if (Request::is('/'))
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    @endif        
-                </li>
             </ul>
 
             <!-- Login Dropdown -->
