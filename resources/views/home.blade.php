@@ -66,7 +66,7 @@
                 @endif
                 
                 <div class="item">
-                    <img class="img-responsive" src="{{ asset('template/images/galaxy.jpg') }}" alt="slider">
+                    <img class="img-responsive" src="{{ asset('template/images/view-more-article.jpg') }}" alt="slider">
                     <div class="slider-content">
                         <div class="col-md-12 text-center">
                             <h1 class="animated2">
@@ -84,8 +84,8 @@
                         @endphp
                         @foreach ($homedata[2] as $question)
                             @if ($i < 1)
-                                <div class="item">
-                                    <img class="img-responsive" src="{{ asset('template/images/galaxy.jpg') }}" alt="slider">
+                                <div class="item overlay">
+                                    <img class="img-responsive" src="{{ asset('template/images/question.jpg') }}" alt="slider">
                                     <div class="slider-content">
                                         <div class="col-md-12 text-center">
                                             <h1 class="animated1">
@@ -108,7 +108,7 @@
 
                 @if ((Auth::user() != null) || (Auth::guard('member')->user() != null))
                 <div class="item">
-                    <img class="img-responsive" src="{{ asset('template/images/galaxy.jpg') }}" alt="slider">
+                    <img class="img-responsive" src="{{ asset('template/images/view-more-questions.jpg') }}" alt="slider">
                     <div class="slider-content">
                         <div class="col-md-12 text-center">
                             <h1 class="animated2">
