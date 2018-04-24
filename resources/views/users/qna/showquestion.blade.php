@@ -71,33 +71,40 @@
             <div class="row">
                 @foreach ($questions as $question)
                 <div class="col-2"></div>
-                <div class="well question-container col-8">
-                    <div class="row">
-                        <div class="col-12 post-card">
-                            <h3><a href="/questions/{{$question->id}}">{{$question->topic}}</a></h3>
-                            <p style="font-size: 1.3em">{{$question->body}}</p>
-                            <small>
-                                <i>
-                                    Written on {{$question->created_at}} 
-                                    @if ($question->is_anon == 1)
-                                        by Anonymous
-                                    @else
-                                        by <a href="/members/{{$question->member->id}}">{{$question->member->name}}</a>
-                                    @endif
-                                </i>
-                            </small>
-                            <br>
-                            @if ($question->created_at != $question->updated_at)
-                                <small style="color:green;">(edited)</small>
-                            @endif
-                            <!-- <input type="submit" id="btn-{{$question->id}}" class="hidden-button show-answer btn btn-primary" value="Show Answers"></input> -->
+                <div class="col-8">
+                    <div class="well question-container" style="margin-bottom: 0px !important">
+                        <div class="row">
+                            <div class="col-12 post-card">
+                                <h3><a href="/questions/{{$question->id}}">{{$question->topic}}</a></h3>
+                                <p style="font-size: 1.3em">{{$question->body}}</p>
+                                <small>
+                                    <i>
+                                        Written on {{$question->created_at}} 
+                                        @if ($question->is_anon == 1)
+                                            by Anonymous
+                                        @else
+                                            by <a href="/members/{{$question->member->id}}">{{$question->member->name}}</a>
+                                        @endif
+                                    </i>
+                                </small>
+                                @if ($question->created_at != $question->updated_at)
+                                    <small style="color:green;">(edited)</small>
+                                @endif
+                                <!-- <input type="submit" id="btn-{{$question->id}}" class="hidden-button show-answer btn btn-primary" value="Show Answers"></input> -->
+                            </div>
                         </div>
                     </div>
-                    <div id="answers-{{$question->id}}" class="row">
+                    @if (count($question->answers) > 0)
+                    <div id="answers-{{$question->id}}" class="row" style="font-size: 0.8em; background-color: #efefef">
                         @foreach ($question->answers->sortByDesc('rating')->sortByDesc('is_pinned')->take(3) as $answer)
-                            <div class="col-12 post-card">
-                                <hr>
-                                    <p>{{$answer->body}}</p>
+                            <div class="col-12 post-card" style="border: 1px solid #d8d8d8; border-top: 0px !important; padding: 5px 0px">
+                                <div class="row">
+                                    <div class="col-2" style="max-width: 40px !important; padding: 0px !important; margin-left: 40px">
+                                    <span class="sum-rating">{{$answer->rating}}</span>
+                                    <small style="font-size:1.1em;">vote<span>@if($answer->rating > 1)<span>s</span>@endif</span></small>
+                                </div>
+                                <div class="col-10" style="padding: 0px !important; margin-left: 40px">
+                                    <span>{{$answer->body}}</span><br>
                                     <a href="/answers/{{$answer->id}}">
                                         <small>
                                             Written on {{$answer->created_at}}
@@ -105,13 +112,16 @@
                                     </a>
                                     by <a href="/members/{{$question->member->id}}">{{$question->member->name}}</a>
                                     <span>@if($answer->is_admin == 1)<span>as <span style="color:blue;">admin</span></span>@endif</span>
-                                    <br>
                                     @if ($answer->created_at != $answer->updated_at)
                                         <small style="color:green;">(edited)</small>
                                     @endif
+                                </div>
+                                </div>
                             </div>
                         @endforeach
                     </div>
+                    @endif
+                    <br>
                 </div>
                 <div class="col-2"></div>
             @endforeach
