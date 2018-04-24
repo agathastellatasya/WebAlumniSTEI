@@ -78,7 +78,12 @@
                             <p style="font-size: 1.3em">{{$question->body}}</p>
                             <small>
                                 <i>
-                                    Written on {{$question->created_at}} by {{$question->member->name}}
+                                    Written on {{$question->created_at}} 
+                                    @if ($question->is_anon == 1)
+                                        by Anonymous
+                                    @else
+                                        by {{$question->member->name}}
+                                    @endif
                                 </i>
                             </small>
                             <br>

@@ -20,6 +20,17 @@
                 {{Form::label('body', 'Question')}}
                 {{Form::textarea('body', $question->body, ['class' => 'form-control', 'placeholder' => 'Question'])}}
             </div>
+            <div class="form-group">
+                <div style="float:left;">{{Form::label('anon', 'Anonymous')}}&nbsp;&nbsp;&nbsp;</div>
+                <label class="switch">
+                    @if ($question->is_anon == 1)
+                        <input name="anon" id="anon" value="yes" type="checkbox" checked>
+                    @else
+                        <input name="anon" id="anon" value="yes" type="checkbox">
+                    @endif
+                    <span class="slider round"></span>
+                </label>
+            </div>
             {{Form::hidden('_method', 'PUT')}}
             <div class="bottomButton">
                 {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}

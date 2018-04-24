@@ -12,7 +12,13 @@
                         <div class="footer-article"><hr>
                             <small>Written on {{$question->created_at}}</small><br>
                             <small>Last Editted on {{$question->updated_at}}</small><br>
-                            <small>by {{$question->member->name}}</small><hr>
+                            <small>
+                                @if ($question->is_anon == 1)
+                                    by Anonymous
+                                @else
+                                    by {{$question->member->name}}
+                                @endif
+                            </small><hr>
                         </div>
                         @if((!Auth::guest() && Auth::user()->IsAdmin == 1) || (Auth::guard('member')->user() != null && $question->member->id == Auth::guard('member')->user()->id && $question->is_admin == 0))
                             <a href="/questions/{{$question->id}}/edit" class="pull-left btn btn-warning">Edit</a>

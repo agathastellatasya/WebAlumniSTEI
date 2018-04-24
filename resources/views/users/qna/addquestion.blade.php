@@ -20,6 +20,13 @@
                     {{Form::label('body', 'Question')}}
                     {{Form::textarea('body', '', ['class' => 'form-control', 'placeholder' => 'Question'])}}
                 </div>
+                <div class="form-group">
+                    <div style="float:left;">{{Form::label('anon', 'Anonymous')}}&nbsp;&nbsp;&nbsp;</div>
+                    <label class="switch">
+                        <input name="anon" id="anon" value="yes" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
                 <div>
                     {{Form::submit('Submit', ['class' => 'btn btn-primary pull-left'])}}
                     <a onclick="return confirm('Are you sure you want to leave?')"
