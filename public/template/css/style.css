@@ -1679,6 +1679,7 @@ footer.style-1 .footer-link li {
     padding: 0 2px;
     opacity: 0;
     text-align: center;
+    min-height: 300px;
 }
 
 .team-member:hover .team-details {
