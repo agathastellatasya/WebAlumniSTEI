@@ -100,9 +100,11 @@
                                     <p>{{$answer->body}}</p>
                                     <a href="/answers/{{$answer->id}}">
                                         <small>
-                                            Written on {{$answer->created_at}} by {{$answer->member->name}} <span>@if($answer->is_admin == 1)<span>as <span style="color:blue;">admin</span></span>@endif</span>
+                                            Written on {{$answer->created_at}}
                                         </small>
                                     </a>
+                                    by <a href="/members/{{$question->member->id}}">{{$question->member->name}}</a>
+                                    <span>@if($answer->is_admin == 1)<span>as <span style="color:blue;">admin</span></span>@endif</span>
                                     <br>
                                     @if ($answer->created_at != $answer->updated_at)
                                         <small style="color:green;">(edited)</small>
