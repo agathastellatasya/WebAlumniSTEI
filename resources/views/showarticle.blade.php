@@ -29,7 +29,7 @@
             <hr>
             <small>Written on {{$post->created_at}}</small><br>
             <small>Last Editted on {{$post->updated_at}}</small><br>
-            <small>by {{$post->user->name}}</small>
+            <small>by Admin</small>
             <hr>
 
             @if(!Auth::guest() &&  Auth::user()->IsAdmin == 1)

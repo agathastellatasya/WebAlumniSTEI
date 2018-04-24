@@ -16,19 +16,21 @@
                                 @if ($question->is_anon == 1)
                                     by Anonymous
                                 @else
-                                    by {{$question->member->name}}
+                                    by <a href="/members/{{$question->member->id}}">{{$question->member->name}}</a>
                                 @endif
-                            </small><hr>
+                            </small>
                         </div>
                         @if((!Auth::guest() && Auth::user()->IsAdmin == 1) || (Auth::guard('member')->user() != null && $question->member->id == Auth::guard('member')->user()->id && $question->is_admin == 0))
-                            <a href="/questions/{{$question->id}}/edit" class="pull-left btn btn-warning">Edit</a>
-                            {!!Form::open(['action' => ['QuestionsController@destroy', $question->id], 'method' => 'POST', 'class' => 'pull-left', 'style' => 'margin-left: 20px'])!!}
-                                {{Form::hidden('_method', 'DELETE')}}
-                                {{Form::submit('Delete', ['class' => 'btn btn-danger', 'onclick' => "return confirm('Are you sure you want to delete?')"])}}
-                            {!!Form::close() !!}
+                            <div style="margin-top: 20px">
+                                <a href="/questions/{{$question->id}}/edit" class="pull-left btn btn-warning">Edit</a>
+                                {!!Form::open(['action' => ['QuestionsController@destroy', $question->id], 'method' => 'POST', 'class' => 'pull-left', 'style' => 'margin-left: 20px'])!!}
+                                    {{Form::hidden('_method', 'DELETE')}}
+                                    {{Form::submit('Delete', ['class' => 'btn btn-danger', 'onclick' => "return confirm('Are you sure you want to delete?')"])}}
+                                {!!Form::close() !!}
+                            </div>
                         @endif
-                        <br><br>
                     </div>
+                    <br><br>
                     <div id="answercontainer-{{$question->id}}" class="col-12 post-card">
                         <div id="add-answer">
                             <hr>
@@ -38,7 +40,7 @@
                                 {{Form::text('body', '', ['class' => 'form-control'])}}
                             </div>
                             {{ Form::hidden('question_id', $question->id) }}
-                            {{Form::submit('Submit', ['class' => 'btn btn-primary pull-right'])}}
+                            {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
                                 <!-- <a onclick="return confirm('Are you sure you want to cancel?')" href="/admin/questions" class="btn btn-danger pull-right">Cancel</a> -->
                             {!! Form::close() !!}
                         </div>
@@ -79,7 +81,7 @@
                                 <p>{{$answer->body}}</p>
                                 <a href="/answers/{{$answer->id}}">
                                     <small>
-                                        Written on {{$answer->created_at}} by {{$answer->member->name}} <span>@if($answer->is_admin == 1)<span>as <span style="color:blue;">admin</span></span>@endif</span>
+                                        Written on {{$answer->created_at}} by <a href="/members/{{$answer->member->id}}">{{$answer->member->name}}</a> <span>@if($answer->is_admin == 1)<span>as <span style="color:blue;">admin</span></span>@endif</span>
                                     </small>
                                 </a>
                                 <br>

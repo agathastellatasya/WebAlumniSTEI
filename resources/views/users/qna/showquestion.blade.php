@@ -82,7 +82,7 @@
                                     @if ($question->is_anon == 1)
                                         by Anonymous
                                     @else
-                                        by {{$question->member->name}}
+                                        by <a href="/members/{{$question->member->id}}">{{$question->member->name}}</a>
                                     @endif
                                 </i>
                             </small>
@@ -94,15 +94,17 @@
                         </div>
                     </div>
                     <div id="answers-{{$question->id}}" class="row">
-                        @foreach ($question->answers->sortByDesc('rating')->sortByDesc('is_pinned') as $answer)
+                        @foreach ($question->answers->sortByDesc('rating')->sortByDesc('is_pinned')->take(3) as $answer)
                             <div class="col-12 post-card">
                                 <hr>
                                     <p>{{$answer->body}}</p>
                                     <a href="/answers/{{$answer->id}}">
                                         <small>
-                                            Written on {{$answer->created_at}} by {{$answer->member->name}} <span>@if($answer->is_admin == 1)<span>as <span style="color:blue;">admin</span></span>@endif</span>
+                                            Written on {{$answer->created_at}}
                                         </small>
                                     </a>
+                                    by <a href="/members/{{$question->member->id}}">{{$question->member->name}}</a>
+                                    <span>@if($answer->is_admin == 1)<span>as <span style="color:blue;">admin</span></span>@endif</span>
                                     <br>
                                     @if ($answer->created_at != $answer->updated_at)
                                         <small style="color:green;">(edited)</small>
