@@ -158,28 +158,27 @@
     </div>
  
     <section id="profile">
-        <div>
-            <div class="section pull-right" style="padding: 1em 2em 0 0">
-                @if((Auth::user() != null && Auth::user()->IsAdmin == 1) || (Auth::guard('member')->user() != null && Auth::guard('member')->user()->id == $userdata[3]->id))
-                    <a href="/members/{{$userdata[3]->id}}/edit" data-original-title="Edit this user" 
-                        data-toggle="tooltip" type="button" class="btn btn-sm btn-warning" style="margin-bottom: 1em">
-                        <i class="glyphicon glyphicon-edit"></i>
-                    </a><br>
-                @endif
-                @if(!Auth::guest() &&  Auth::user()->IsAdmin == 1)
-                    <a onclick="return confirm('Do you want to delete this member?')" href="/members/{{$userdata[3]->id}}/delete" data-original-title="Delete this user" 
-                        data-toggle="tooltip" type="button" class="btn btn-sm btn-danger pull-right">
-                        <i class="glyphicon glyphicon-trash"></i>
-                    </a>
-                @endif
-            </div>
-        </div>
         <div class="row">
             <div class="col-12">
                 <div class="profile-info">
                     <div class="col-md-8 col-lg-5 col-md-offset-2 col-lg-offset-3-5"> 
                         <table class="table table-user-information">
                             <tbody>
+                                <tr>
+                                    <div class="pull-right">
+                                    @if((Auth::user() != null && Auth::user()->IsAdmin == 1) || (Auth::guard('member')->user() != null && Auth::guard('member')->user()->id == $userdata[3]->id))
+                                        <a href="/members/{{$userdata[3]->id}}/edit" data-original-title="Edit this user" 
+                                            data-toggle="tooltip" type="button" class="btn btn-sm btn-warning" style="margin-bottom: 1em; background-color: #e5e5e5; border: none; color: black">
+                                            Edit Profile <i class="glyphicon glyphicon-edit" style="font-size: 1.5em; margin-left: 10px;"></i>
+                                        </a><br>
+                                    @endif
+                                    @if(!Auth::guest() &&  Auth::user()->IsAdmin == 1)
+                                        <a onclick="return confirm('Do you want to delete this member?')" href="/members/{{$userdata[3]->id}}/delete" data-original-title="Delete this user" 
+                                            data-toggle="tooltip" type="button" class="btn btn-sm btn-danger pull-right">
+                                            <i class="glyphicon glyphicon-trash"></i>
+                                        </a>
+                                    @endif
+                                </tr>
                                 <tr>
                                     <td class="user-info-left">Name</td>
                                     <td>{{$userdata[3]->name}}</td>
