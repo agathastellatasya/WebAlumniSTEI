@@ -74,6 +74,20 @@
                         </div>
                     </div>
                 </div>
+                @if ((Auth::user() != null) || (Auth::guard('member')->user() != null))
+                <div class="item">
+                    <img class="img-responsive" src="{{ asset('template/images/galaxy.jpg') }}" alt="slider">
+                    <div class="slider-content">
+                        <div class="col-md-12 text-center">
+                            <h1 class="animated2">
+                                <span>View <strong>Forum</strong></span>
+                            </h1>
+                            <p class="animated2">Anda bisa mengirimkan pertanyaan pada forum alumni STEI-ITB</p>
+                            <a class="page-scroll btn btn-primary animated3" href="/questions">Visit</a>
+                        </div>
+                    </div>
+                </div>
+                @endif
                 <!--/ Carousel item end -->
             </div>
             <!-- Carousel inner end-->
