@@ -75,8 +75,8 @@
                     <div class="well question-container" style="margin-bottom: 0px !important">
                         <div class="row">
                             <div class="col-12 post-card">
-                                <h3><a href="/questions/{{$question->id}}">{{$question->topic}}</a></h3>
-                                <p style="font-size: 1.3em">{{$question->body}}</p>
+                                <h3><a href="/questions/{{$question->id}}" style="word-wrap: break-word;">{{$question->topic}}</a></h3>
+                                <p style="font-size: 1.3em; word-wrap: break-word;">{{$question->body}}</p>
                                 <small>
                                     <i>
                                         Written on {{$question->created_at}} 
@@ -104,7 +104,7 @@
                                     <small style="font-size:1.1em;">vote<span>@if($answer->rating > 1)<span>s</span>@endif</span></small>
                                 </div>
                                 <div class="col-10" style="padding: 0px !important; margin-left: 40px">
-                                    <span>{{$answer->body}}</span><br>
+                                    <span style="word-wrap: break-word;">{{$answer->body}}</span><br>
                                     <a href="/answers/{{$answer->id}}">
                                         <small>
                                             Written on {{$answer->created_at}}
