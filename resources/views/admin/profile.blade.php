@@ -132,7 +132,7 @@
             <h3 class="panel-title user-main-name">{{$userdata[3]->name}}</h3>
             <h3 class="panel-title nim">{{$userdata[3]->nim}}</h3>
         </div>        
-        <div class="col-5 col-md-offset-3-5 col-xs-offset-3-5 edit-prof-pic" style="margin-right: 29.166666667%">
+        <div class="col-md-5 col-md-offset-3-5 col-xs-12 edit-prof-pic">
             <div class="row user-services">
                 <div class="col-4 user-services-questions">
                     {{count($userdata[1])}}
