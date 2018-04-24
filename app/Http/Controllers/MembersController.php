@@ -62,9 +62,9 @@ class MembersController extends Controller
 
         $posts = Post::where('user_id', $id)->get();
 
-        $questions = Question::where('user_id', $id)->get();
+        $questions = Question::where('member_id', $id)->get();
 
-        $answers = Answer::where('user_id', $id)->get();
+        $answers = Answer::where('member_id', $id)->get();
         
         $user = Member::find($id);
         if($user == null){
