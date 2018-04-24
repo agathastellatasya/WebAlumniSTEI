@@ -134,25 +134,19 @@
         </div>        
         <div class="col-md-5 col-md-offset-3-5 col-xs-12 edit-prof-pic">
             <div class="row user-services">
-                <div class="col-4 user-services-questions">
+                <div class="col-6 user-services-questions">
                     {{count($userdata[1])}}
                 </div>
-                <div class="col-4 user-services-answers">
+                <div class="col-6 user-services-answers">
                     {{count($userdata[2])}}
-                </div>
-                <div class="col-4 user-services-article">
-                    {{count($userdata[0])}}
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 user-services-questions-text">
+                <div class="col-6 user-services-questions-text">
                     Questions Asked
                 </div>
-                <div class="col-4 user-services-answers-text">
+                <div class="col-6 user-services-answers-text">
                     Answers Submitted
-                </div>
-                <div class="col-4 user-services-article-text">
-                    Article Posted
                 </div>
             </div>
         </div>   
