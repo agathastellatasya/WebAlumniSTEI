@@ -70,7 +70,7 @@
                             <h1 class="animated2">
                                 <span>View more <strong>Article</strong></span>
                             </h1>
-                             <a class="animated3 slider btn btn-primary btn-min-block" href="/article">Click me</a>
+                            <a class="page-scroll btn btn-primary animated3" href="/article">View</a>
                         </div>
                     </div>
                 </div>
