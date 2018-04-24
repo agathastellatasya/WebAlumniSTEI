@@ -88,6 +88,33 @@
                     </div>
                 </div>
                 @endif
+
+                @if (count($homedata[2]) > 0)
+                    @php
+                        $i = 0;
+                    @endphp
+                    @foreach ($homedata[2] as $question)
+                        @if ($i < 3)
+                            <div class="item overlay">
+                                <img class="img-responsive-article" src="{{asset('template/images/galaxy.jpg') }}" alt="slider">
+                                <div class="slider-content">
+                                    <div class="col-md-12 text-center">
+                                        <h1 class="animated1">
+                                            <span>{{$question->topic}}</span>
+                                        </h1>
+                                        <h3 class="animated3">{{$question->body}}</h3>
+                                        <a href="/questions/{{$question->id}}" class="page-scroll btn btn-primary animated3">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            @php
+                                $i = $i + 1;
+                            @endphp
+                        @else
+                            @break
+                        @endif
+                    @endforeach
+                @endif
                 <!--/ Carousel item end -->
             </div>
             <!-- Carousel inner end-->
