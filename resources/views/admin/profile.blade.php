@@ -5,7 +5,7 @@
 @section('content')
 
 @if(Auth::user() != null && Auth::user()->IsAdmin == 1)
-<div class="container" style="margin-top: 3%">
+<div class="container" style="margin-top: 3%; min-height: 1000px">
     <div class="row edit-profile">
         <div class="col-4 edit-prof-pic">
             <img alt="User Pic" src="/storage/profile_image/{{$userdata[3]->profile_image}}" class="img-circle img-responsive"

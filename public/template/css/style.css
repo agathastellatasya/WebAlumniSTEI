@@ -2110,9 +2110,13 @@ a>.on-page>.active {
 }
 
 /*-----------------------------------------------*/
-/* Profile Forum								 */
+/* Profile 		 								 */
 /* By: Stevanno									 */	
 /*-----------------------------------------------*/
+
+#profile {
+	min-height: 600px;
+}
 
 .user-info-left {
   font-weight: bolder;
