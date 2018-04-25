@@ -30,7 +30,7 @@
     
     <!-- Colors CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('template/css/color/green.css') }}">
-    
+    <link rel="icon" href="/storage/logo_itb.png" type="image/x-icon"/>
     
     
     <!-- Colors CSS -->
