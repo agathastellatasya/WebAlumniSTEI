@@ -334,7 +334,7 @@
                                 </div>          
                             @endif
 
-                            @if (count($homedata[1]) > 4)
+                            {{-- @if (count($homedata[1]) > 4)
                                 <div class="team-member">
                                     <img src="/storage/profile_image/{{$homedata[1][4]->profile_image}}" class="img-responsive" alt="">
                                     <div class="team-details">
@@ -351,11 +351,12 @@
                                         </ul>
                                     </div>
                                 </div>          
-                            @endif
+                            @endif --}}
 
                             <div class="team-member">
                                 <img src="/storage/view-more-members.png" class="img-responsive" alt="">
                                 <div class="team-details">
+                                    <h4>VIEW MORE</h4>
                                     <ul>
                                     @if ((Auth::user() != null) || (Auth::guard('member')->user() != null))
                                         <li>
@@ -364,9 +365,9 @@
                                             </a>
                                         </li>
                                     @else
-                                        <li class="popup" onclick="myFunction()">
-                                            <span class="popuptext" id="myPopup">You must login first <a href="/login"><u>(LOGIN)</u></a></span>
-                                            <i class="fa fa-user show-profile-icon-team-details"></i></li>
+                                        <li class="popup" onclick="myFunction5()" style="padding-top: 5px">
+                                            <span class="popuptext" id="myPopup5">You must login first <a href="/login"><u>(LOGIN)</u></a></span>
+                                            <i class="fa fa-search-plus fa-5x" style="background: none; border: none; color: white"></i></li>
                                     @endif
                                     </ul>
                                 </div>
