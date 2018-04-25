@@ -9,7 +9,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-          <div class="collapse navbar-collapse" style="margin-left:4%;" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <!-- Left Side Of Navbar -->
               <ul class="navbar-nav mr-auto">
                 @if(Auth::guard('member')->user() != null)
@@ -34,7 +34,7 @@
                 </ul>
 
               <!-- Right Side Of Navbar -->
-              <ul class="navbar-nav ml-auto navbar-right">
+              <ul class="navbar-nav ml-auto navbar-right reset-margin">
                   <!-- Authentication Links -->
                   @guest
                     @if(Auth::guard('member')->user() != null)

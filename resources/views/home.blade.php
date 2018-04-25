@@ -352,6 +352,25 @@
                                     </div>
                                 </div>          
                             @endif
+
+                            <div class="team-member">
+                                <img src="/storage/view-more-members.png" class="img-responsive" alt="">
+                                <div class="team-details">
+                                    <ul>
+                                    @if ((Auth::user() != null) || (Auth::guard('member')->user() != null))
+                                        <li>
+                                            <a href="/members" style="background: none; border: none; color: white">
+                                                <i class="fa fa-search-plus fa-5x" style="margin-top:80%"></i>
+                                            </a>
+                                        </li>
+                                    @else
+                                        <li class="popup" onclick="myFunction()">
+                                            <span class="popuptext" id="myPopup">You must login first <a href="/login"><u>(LOGIN)</u></a></span>
+                                            <i class="fa fa-user show-profile-icon-team-details"></i></li>
+                                    @endif
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

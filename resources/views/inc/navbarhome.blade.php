@@ -43,7 +43,7 @@
                 </li>
                 <li>
                     @if (Request::is('/'))
-                        <a class="page-scroll" href="#team">New member</a>
+                        <a class="page-scroll" href="#team">Members</a>
                     @endif                       
                 </li>
                 <li>
