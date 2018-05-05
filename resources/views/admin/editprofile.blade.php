@@ -26,6 +26,13 @@
                                         <br>
                                     </td>
                                 </tr>
+				<tr>
+				    <td>Email</td>
+                                    <td>
+                                        {{Form::text('email', $user->email, ['class' => 'form-control'])}}
+                                  </td>
+                                </tr>
+
                                 <tr>
                                     <td>Phone Number</td>
                                     <td>

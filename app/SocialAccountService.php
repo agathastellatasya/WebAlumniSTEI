@@ -97,10 +97,12 @@ class SocialAccountService
                 $user->id = -1;
                 $user->verified = false;
             } else {
+		if($account == null){
                 $user->accounts()->create([
                     'provider_id'   => $providerUser->getId(),
                     'provider_name' => $provider,
                 ]);
+                }
 
                 if($provider == "google" && $user->verified == false){
                     $tempUser = new Member;
@@ -112,7 +114,9 @@ class SocialAccountService
                         Mail::to($user)->send(new SendVerificationEmail($token));
                         $tempUser->id = -2;
                         return $tempUser;
-                    }
+                    }else{
+			$user->verifyToken->delete();
+		    }
                     $tempUser->id = -3;
                     return $tempUser;
                 }
