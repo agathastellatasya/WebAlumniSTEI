@@ -44,7 +44,7 @@ class AnswersController extends Controller
         
         $questions = Question::orderBy('created_at','desc')->paginate(15);
         if ($isAdmin) {
-            return view('admin.addanswer')->with('questions', $questions)->with('question_id', $question_id);
+            return view('admin.showquestion')->with('questions', $questions)->with('question_id', $question_id);
         } else {
             return view('users.qna.addanswer')->with('questions', $questions)->with('question_id', $question_id);
         }

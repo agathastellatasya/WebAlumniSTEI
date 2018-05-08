@@ -151,10 +151,6 @@ class MembersController extends Controller
             ]);
         }else{
         $this->validate($request, [
-            //'email' => 
-            //    array(
-            //        'required',
-            //        'regex:/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}/'),
        	    'phone_number' => 
                 array(
                     'required',

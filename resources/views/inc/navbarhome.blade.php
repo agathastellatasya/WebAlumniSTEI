@@ -58,24 +58,6 @@
                             </ul>
                         </li>
                     </div>
-                    <!--<li class="on-page" id="home-navbar">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="/" style="color:white">Home
-                        <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="#page-top">Introduction</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="#service">Services</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="#team">New Member</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </li>-->
                 @else
                     <div class="navbar-nav ml-auto" style="margin-top: 1.20%; padding-left: 1%; padding-right: 1%">
                         <li class="nav-item dropdown" style="">
@@ -107,24 +89,6 @@
                             </ul>
                         </li>
                     </div>
-                    <!--<li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="/">Home
-                        <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-home">
-                                <a class="page-scroll on-page" href="/#page-top">Introduction</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="/#service">Services</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="/#team">New Member</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="/#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </li>-->
                 @endif
             <ul class="nav navbar-nav navbar-left">
                 @if(Request::is('article'))
@@ -139,7 +103,7 @@
 
                 {{-- Forum --}}
                 @if(Auth::guard('member')->user() != null)
-                    @if(Request::is('questions')) <!-- URL Forum -->
+                    @if(Request::is('questions'))
                         <li class="on-page">
                             <a href="#">Forum</a>
                         </li>
@@ -188,7 +152,6 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
                                     <a class="dropdown-item" href="/members/{{Auth::guard('member')->user()->id}}">
-                                    {{-- <a class="dropdown-item" href="/profilemember/{{Auth::guard('member')->user()->id}}"> --}}
                                         Profile
                                     </a>
                                 </li>
