@@ -41,7 +41,8 @@ class SocialAccountsController extends Controller
         //dd($accountService->user());
         //dd(auth()->guard('member')->user());
         try {
-            $user = Socialite::with($provider)->setHttpClient(new \GuzzleHttp\Client(['curl' => array(CURLOPT_PROXY => 'cache.itb.ac.id', CURLOPT_PROXYPORT => 8080, CURLOPT_PROXYUSERPWD => 'yowinarto:06561330', CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2)]))->user();
+            $user = Socialite::with($provider)->user();
+            //uncomment this: $user = Socialite::with($provider)->setHttpClient(new \GuzzleHttp\Client(['curl' => array(CURLOPT_PROXY => 'cache.itb.ac.id', CURLOPT_PROXYPORT => 8080, CURLOPT_PROXYUSERPWD => 'yowinarto:06561330', CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2)]))->user();
 //dd(Socialite::with($provider)->setHttpClient(new \GuzzleHttp\Client(['curl' => array(CURLOPT_PROXY => 'cache.itb.ac.id', CURLOPT_PROXYPORT => 8080, CURLOPT_PROXYUSERPWD => 'yowinarto:06561330', CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2
 //)]))->user());
         } catch (Exception $e) {

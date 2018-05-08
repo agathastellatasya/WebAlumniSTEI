@@ -385,8 +385,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title text-center">
-                        <h3>Contact With Us</h3>
-                        <h5 class="white-text lowercase"><strong>sisfo@std.stei.itb.ac.id</strong></h5>
+                        <h3>Contact Us</h3>
+                        <!--<h5 class="white-text lowercase"><strong>sisfo@std.stei.itb.ac.id</strong></h5>-->
                     </div>
                 </div>
             </div>

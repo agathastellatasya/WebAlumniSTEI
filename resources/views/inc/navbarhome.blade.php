@@ -8,7 +8,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span
+                <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -23,13 +23,42 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-left">
-                <li class="hidden">
+                <!--<li class="hidden">
                     <a href="#page-top"></a>
-                </li>   
+                </li>-->   
 
                 @if(Request::is('/'))
-                    <li class="on-page" id="home-navbar">
+                    <div class="navbar-nav ml-auto" style="margin-top: 1.20%; padding-left: 1%; padding-right: 1%">
+                        <li class="nav-item dropdown" style="">
+                            <a id="navbarDropdown login-dropdown" class="nav-link dropdown-toggle login" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <span>Home</span>
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="#page-top">
+                                        Introduction
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="#service">
+                                        Services
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="#team">
+                                        New Member
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="#contact">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                    <!--<li class="on-page" id="home-navbar">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="/" style="color:white">Home
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -46,9 +75,39 @@
                                 <a class="page-scroll" href="#contact">Contact</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                 @else
-                    <li>
+                    <div class="navbar-nav ml-auto" style="margin-top: 1.20%; padding-left: 1%; padding-right: 1%">
+                        <li class="nav-item dropdown" style="">
+                            <a id="navbarDropdown login-dropdown" class="nav-link dropdown-toggle login" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <span>Home</span>
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="/#page-top">
+                                        Introduction
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="/#service">
+                                        Services
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="/#team">
+                                        New Member
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="/#contact">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                    <!--<li>
                         <a class="dropdown-toggle" data-toggle="dropdown" href="/">Home
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -65,8 +124,9 @@
                                 <a class="page-scroll" href="/#contact">Contact</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                 @endif
+            <ul class="nav navbar-nav navbar-left">
                 @if(Request::is('article'))
                     <li class="on-page">
                         <a href="#">Article</a>
