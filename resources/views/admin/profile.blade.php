@@ -23,10 +23,10 @@
                         <td>Name</td>
                         <td>{{$user->name}}</td>
                     </tr>
-                    <!--<tr>
+                    <tr>
                         <td>Email</td>
-                        <td><a href="mailto:{{$user->email}}">{{$user->email}}</a></td>
-                    </tr>-->
+                        <td>{{$user->email}}</td>
+                    </tr>
                     <tr>
                         <td>Phone Number</td>
                         <td>{{$user->phone_number}}                            

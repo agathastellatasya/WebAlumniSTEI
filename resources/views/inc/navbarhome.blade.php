@@ -8,7 +8,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span
+                <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -23,50 +23,74 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-left">
-                <li class="hidden">
+                <!--<li class="hidden">
                     <a href="#page-top"></a>
-                </li>   
+                </li>-->   
 
                 @if(Request::is('/'))
-                    <li class="on-page" id="home-navbar">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="/" style="color:white">Home
-                        <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="#page-top">Introduction</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="#service">Services</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="#team">New Member</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </li>
+                    <div class="navbar-nav  ml-auto nav navbar-left">
+                        <li class="nav-item dropdown" style="">
+                            <a id="navbarDropdown login-dropdown" class="nav-link dropdown-toggle login" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <span>Home</span>
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="#page-top">
+                                        Introduction
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="#service">
+                                        Services
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="#team">
+                                        New Member
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="#contact">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
                 @else
-                    <li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="/">Home
-                        <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-home">
-                                <a class="page-scroll on-page" href="/#page-top">Introduction</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="/#service">Services</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="/#team">New Member</a>
-                            </li>
-                            <li class="dropdown-home">
-                                <a class="page-scroll" href="/#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </li>
+                    <div class="navbar-nav ml-auto nav navbar-left">
+                        <li class="nav-item dropdown" style="">
+                            <a id="navbarDropdown login-dropdown" class="nav-link dropdown-toggle login" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <span>Home</span>
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="/#page-top">
+                                        Introduction
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="/#service">
+                                        Services
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="/#team">
+                                        New Member
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item page-scroll" href="/#contact">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
                 @endif
+            <ul class="nav navbar-nav navbar-left">
                 @if(Request::is('article'))
                     <li class="on-page">
                         <a href="#">Article</a>
@@ -79,7 +103,7 @@
 
                 {{-- Forum --}}
                 @if(Auth::guard('member')->user() != null)
-                    @if(Request::is('questions')) <!-- URL Forum -->
+                    @if(Request::is('questions'))
                         <li class="on-page">
                             <a href="#">Forum</a>
                         </li>
@@ -128,7 +152,6 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
                                     <a class="dropdown-item" href="/members/{{Auth::guard('member')->user()->id}}">
-                                    {{-- <a class="dropdown-item" href="/profilemember/{{Auth::guard('member')->user()->id}}"> --}}
                                         Profile
                                     </a>
                                 </li>

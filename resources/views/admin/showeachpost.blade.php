@@ -42,8 +42,6 @@
                 {{Form::submit('Delete', ['class' => 'btn btn-danger', 'onclick' => "return confirm('Are you sure you want to delete?')"])}}
             {!!Form::close() !!}
         @endif
-        <!--<br><br><br>
-        <a href="/admin/posts" class="btn btn-info pull-down">&#8592; Back</a>-->
         
     </div>
 @endsection

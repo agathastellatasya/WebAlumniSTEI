@@ -121,7 +121,6 @@
     document.getElementById("text-nav-four").classList.add("color-active");
 
     $("div[id^='answers']").hide();
-    //$("div[id^='answercontainer']").hide();
 
     $(document).ready(function() {
         $("input[id^='btn']" ).click(function() {
@@ -137,7 +136,6 @@
 
             } else if ($('#btn-' + question_id).hasClass('hidden-button')) {
                 $('#answers-' + question_id).show();
-                //$('#answercontainer-' + classname).show();
             
                 var top = $('#answercontainer-' + question_id).position().top;
                 $('html').scrollTop(top);

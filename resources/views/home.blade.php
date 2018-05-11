@@ -314,44 +314,6 @@
                                     </div>
                                 </div>          
                             @endif
-                        
-                            {{-- @if (count($homedata[1]) > 3)
-                                <div class="team-member">
-                                    <img src="/storage/profile_image/{{$homedata[1][3]->profile_image}}" class="img-responsive" alt="">
-                                    <div class="team-details">
-                                        <h4>{{$homedata[1][3]->name}}</h4>
-                                        <p>Alumni of STEI ITB</p>
-                                        <ul>
-                                        @if ((Auth::user() != null) || (Auth::guard('member')->user() != null))
-                                            <li><a href="/members/{{$homedata[1][3]->id}}"><i class="fa fa-user"></i></a></li>
-                                        @else
-                                            <li class="popup" onclick="myFunction4()">
-                                                <span class="popuptext" id="myPopup4">You must login first <a href="/login"><u>(LOGIN)</u></a></span>
-                                                <i class="fa fa-user show-profile-icon-team-details"></i></li>
-                                        @endif
-                                        </ul>
-                                    </div>
-                                </div>          
-                            @endif
-
-                            @if (count($homedata[1]) > 4)
-                                <div class="team-member">
-                                    <img src="/storage/profile_image/{{$homedata[1][4]->profile_image}}" class="img-responsive" alt="">
-                                    <div class="team-details">
-                                        <h4>{{$homedata[1][4]->name}}</h4>
-                                        <p>Alumni of STEI ITB</p>
-                                        <ul>
-                                        @if ((Auth::user() != null) || (Auth::guard('member')->user() != null))
-                                            <li><a href="/members/{{$homedata[1][4]->id}}"><i class="fa fa-user"></i></a></li>
-                                        @else
-                                            <li class="popup" onclick="myFunction5()">
-                                                <span class="popuptext" id="myPopup5">You must login first <a href="/login"><u>(LOGIN)</u></a></span>
-                                                <i class="fa fa-user show-profile-icon-team-details"></i></li>
-                                        @endif
-                                        </ul>
-                                    </div>
-                                </div>          
-                            @endif --}}
 
                             <div class="team-member">
                                 <img src="/storage/view-more-members.jpg" class="img-responsive" alt="">
@@ -385,8 +347,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title text-center">
-                        <h3>Contact With Us</h3>
-                        <h5 class="white-text lowercase"><strong>sisfo@std.stei.itb.ac.id</strong></h5>
+                        <h3>Contact Us</h3>
                     </div>
                 </div>
             </div>

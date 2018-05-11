@@ -135,13 +135,23 @@ class MembersController extends Controller
 
         if(!($isMember || $isAdmin))
             return redirect('/');
-        
+        if($isAdmin){
+            $this->validate($request, [
+                'email' => 
+                    array(
+                        'required',
+                        'regex:/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}/'),
+                'phone_number' => 
+                    array(
+                        'required',
+                        'regex:/^[0-9]+$/'),
+                'company' => 'required',
+                'interest' => 'required',
+                'profile_image' => 'image|nullable|max:1999'
+            ]);
+        }else{
         $this->validate($request, [
-            //'email' => 
-            //    array(
-            //        'required',
-            //        'regex:/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}/'),
-            'phone_number' => 
+       	    'phone_number' => 
                 array(
                     'required',
                     'regex:/^[0-9]+$/'),
@@ -149,7 +159,7 @@ class MembersController extends Controller
             'interest' => 'required',
             'profile_image' => 'image|nullable|max:1999'
         ]);
-
+	}
         if($request->hasFile('profile_image')){
             $fileNameWithExt = $request->file('profile_image')->getClientOriginalName();
             $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
@@ -160,7 +170,12 @@ class MembersController extends Controller
         }
 
         $user = Member::find($id);
-        //$user->temp_email = $request->input('email');
+        if($isAdmin){
+		$providerUser = $user->accounts()->where('provider_name','=','google')->first();
+		if($providerUser != null)
+			$providerUser->delete();
+		$user->email = $request->input('email');
+	}
         $user->phone_number = $request->input('phone_number');
         $user->company = $request->input('company');
         $user->interest = $request->input('interest');
@@ -173,21 +188,7 @@ class MembersController extends Controller
         }
         $user->save();
 
-        /*if($user->email != $user->temp_email){
-            $provider = $user->accounts()->where('provider_name','=','google')->first();
-            if($user->verifyToken != null)
-                $user->verifyToken->delete();
-
-            if($provider != null)
-                $provider->delete();
-            
-            $token = $user->verifyToken()->create([
-                'token' => sha1(time())
-            ]);
-            Mail::to($user)->send(new SendReverificationEmail($token));
-            return redirect('/members/' . $id)->with('success', 'Profile Updated. Confirmation code has been sent to new email.');
-        }else{*/
-        if ($isAdmin) {
+        if($isAdmin){
             return redirect('/admin/members/' . $id)->with('success', 'Profile Updated');
         } else {
             return redirect('/members/' . $id)->with('success', 'Profile Updated');
@@ -210,6 +211,11 @@ class MembersController extends Controller
 
         $user = Member::find($id);
         if($user !== null) {
+	    $user->accounts()->delete();
+            $user->verifyToken()->delete();
+            $user->rate_answers()->detach();
+            $user->questions()->delete();
+            $user->answers()->delete();
             $user->delete();
             return redirect('/admin/members')->with('error', 'Member Deleted');
         } else {

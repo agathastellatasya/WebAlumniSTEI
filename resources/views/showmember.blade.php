@@ -3,9 +3,6 @@
 @section('title', 'Members List')
 
 @section('content')
-<!--<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-    <img src="{{URL::asset('storage/banner.jpg')}}" id="bannerMember">
-</div>-->
 <div class="col-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 showmember-table" style="min-height: 60em; overflow-x: auto">
     <div class="row" style="margin-top: 1%">
             <div class="col-md-12 col-sm-12">

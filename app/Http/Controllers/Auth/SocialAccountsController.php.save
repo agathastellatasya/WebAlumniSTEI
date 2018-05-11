@@ -38,13 +38,10 @@ class SocialAccountsController extends Controller
     public function handleProviderCallback(SocialAccountService $accountService, $provider)
     {
         //dd($_GET);
-        //dd($accountService->user());
+   
         //dd(auth()->guard('member')->user());
         try {
-            //$user = Socialite::with($provider)->user();
-            $user = Socialite::with($provider)->setHttpClient(new \GuzzleHttp\Client(['curl' => array(CURLOPT_PROXY => 'cache.itb.ac.id', CURLOPT_PROXYPORT => 8080, CURLOPT_PROXYUSERPWD => 'yowinarto:06561330', CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2)]))->user();
-//dd(Socialite::with($provider)->setHttpClient(new \GuzzleHttp\Client(['curl' => array(CURLOPT_PROXY => 'cache.itb.ac.id', CURLOPT_PROXYPORT => 8080, CURLOPT_PROXYUSERPWD => 'yowinarto:06561330', CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2
-//)]))->user());
+            $user = Socialite::with($provider)->user();
         } catch (Exception $e) {
             return redirect('/login');
         }
