@@ -28,7 +28,7 @@
                 </li>-->   
 
                 @if(Request::is('/'))
-                    <div class="navbar-nav ml-auto" style="margin-top: 1.20%; padding-left: 1%; padding-right: 1%">
+                    <div class="navbar-nav  ml-auto nav navbar-left">
                         <li class="nav-item dropdown" style="">
                             <a id="navbarDropdown login-dropdown" class="nav-link dropdown-toggle login" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <span>Home</span>
@@ -59,7 +59,7 @@
                         </li>
                     </div>
                 @else
-                    <div class="navbar-nav ml-auto" style="margin-top: 1.20%; padding-left: 1%; padding-right: 1%">
+                    <div class="navbar-nav ml-auto nav navbar-left">
                         <li class="nav-item dropdown" style="">
                             <a id="navbarDropdown login-dropdown" class="nav-link dropdown-toggle login" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <span>Home</span>
